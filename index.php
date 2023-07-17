@@ -2,6 +2,7 @@
     require_once __DIR__.'/Models/SistemiComunicazione.php';
     require_once __DIR__.'/Models/Email.php';
     require_once __DIR__.'/Models/Allegato.php';
+    require_once __DIR__.'/Models/SMS.php';
 
     $comm = new SistemiComunicazione('Fabrizio','Antoneloo','Sakuto','ciao Antonello');
     
@@ -39,6 +40,33 @@
     //echo "stampa: ".$comm->stampa()."<br/>";
     //echo "inoltro: ".$comm->inoltro()."<br/>";
     //echo "Allegato: ".$email->allegato->getNome().".".$email->allegato->getTipo().", Dimensioni: ".$email->allegato->getDimensioni()."Mb<br/>";
+
+    //SMS
+    $sms = new SMS('Poste', 'Luca', 'pin', 'questo è il tuo pin:****', true, false,);
+    //var_dump($sms);
+
+    echo "Mittente: ".$sms->getMittente()."<br/>";
+    echo "Destinatario: ".$sms->getDestinatario()."<br/>";
+    echo "Oggetto: ".$sms->getOggetto()."<br/>";
+    echo "Contenuto: ".$sms->getContenuto()."<br/>";
+    echo "Notifica: ".$sms->getNotificaLettura();
+    if($sms->getNotificaLettura()){
+        echo "messaggio letto";
+    }
+    else{
+        echo "messaggio non letto";
+    }
+    echo "<br/>"."Risposte:";
+
+    if($sms->getAccettazioneRisposta()){
+        echo "il messaggio accetta risposte";
+    }
+    else{
+        echo "il messaggio non accetta risposte";
+    }
+
+    echo "<br/>";
+    echo "Stato invio: ".$sms->invio()."<br/><hr/>";
 
  
 ?>
