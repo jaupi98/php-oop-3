@@ -1,6 +1,7 @@
 <?php
     require_once __DIR__.'/Models/SistemiComunicazione.php';
     require_once __DIR__.'/Models/Email.php';
+    require_once __DIR__.'/Models/Allegato.php';
 
     $comm = new SistemiComunicazione('Fabrizio','Antoneloo','Sakuto','ciao Antonello');
     
