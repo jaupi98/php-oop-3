@@ -3,6 +3,8 @@
     require_once __DIR__.'/Models/Email.php';
     require_once __DIR__.'/Models/Allegato.php';
     require_once __DIR__.'/Models/SMS.php';
+    require_once __DIR__.'/Models/NotificaPush.php';
+
 
     $comm = new SistemiComunicazione('Fabrizio','Antoneloo','Sakuto','ciao Antonello');
     
